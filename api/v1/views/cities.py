@@ -36,9 +36,11 @@ def delete_city(city_id):
     return jsonify({})
 
 
-@app_views.route("/states/<state_id>/cities", methods=["POST"])
+@app_views.route("/states/<state_id>/cities/", strict_slashes=False,
+                 methods=["POST"])
 def create_city(state_id):
     """Creates a City"""
+    print("id inside createcity ", state_id)
     state = storage.get(State, state_id)
     if not state:
         abort(404)
