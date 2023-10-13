@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""index view"""
+"""states view"""
 from api.v1.views import app_views
 from flask import jsonify, request, abort, make_response
 from models import storage
