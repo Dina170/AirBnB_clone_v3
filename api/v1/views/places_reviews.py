@@ -17,8 +17,8 @@ def review_by_place(place_id):
     return jsonify([obj.to_dict() for obj in place.reviews])
 
 
-@app_views.route("/reviews/<review_id>")
-def get_review(place_id):
+@app_views.route("/reviews/<review_id>", strict_slashes=False)
+def get_review(review_id):
     """Retrieves a review object"""
     obj = storage.get(Review, review_id)
     if obj:
