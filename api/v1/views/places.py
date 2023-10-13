@@ -8,7 +8,7 @@ from models.user import User
 from models.place import Place
 
 
-@app_views.route('/cities/<city_id>/places')
+@app_views.route('/cities/<city_id>/places', strict_slashes=False)
 def places_by_city(city_id):
     """Retrieves the list of all Places objects of a City"""
     city = storage.get(City, city_id)

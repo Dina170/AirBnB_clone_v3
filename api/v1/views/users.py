@@ -6,7 +6,7 @@ from models import storage
 from models.user import User
 
 
-@app_views.route('/users')
+@app_views.route('/users', strict_slashes=False)
 def users():
     """Retrieves the list of all users objects"""
     return jsonify([obj.to_dict() for obj in storage.all(User).values()])
