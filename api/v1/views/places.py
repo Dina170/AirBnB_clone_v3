@@ -53,7 +53,7 @@ def create_place(city_id):
         abort(404)
     if "name" not in request.json:
         abort(400, "Missing name")
-    obj = City(**request.get_json())
+    obj = Place(**request.get_json())
     obj.city_id = city_id
     obj.save()
     return make_response(jsonify(obj.to_dict()), 201)
